@@ -1,0 +1,9 @@
+@import "../valo/styles.css";
+
+.v-panel .v-panel-content {
+    background: blue;
+}
+
+.v-panel-content-desktop > div {
+   background: blue;
+}

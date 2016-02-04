@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="js/hello.js"></script>
+	
+		<style>
+		table, th , td {
+		  border: 1px solid grey;
+		  border-collapse: collapse;
+		  padding: 5px;
+		}
+		table tr:nth-child(odd) {
+		  background-color: #f2f2f2;
+		}
+		table tr:nth-child(even) {
+		  background-color: #ffffff;
+		}
+		</style>
+	
+	</head>
+
+	<body>
+		<div ng-controller="Hello">
+			<ul id="organizations_list" class="">
+  <li ng-repeat="organization in organizations">
+    <span class="large-12">{{ organization.primaryEmail}}</span>
+  </li>
+</ul>
+			
+			
+			<table>
+			   <tr>
+			      <th>Primary Email</th>
+			      <th>Contact</th>
+			   </tr>
+			   <tr ng-repeat="organization in organizations">
+			      <td>{{ organization.primaryEmail }}</td>
+			      <td>{{ organization.primaryPhone }}</td>
+			   </tr>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+	<appender name="log4jchat" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="v2crm.log" />
+		<param name="Append" value="true" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="MaxFileSize" value="2MB" />
+		<param name="MaxBackupIndex" value="90" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{dd MMM yyyy HH:mm:ss,SSS} %C{3} %F %-4r [%t] %-5p %c %x - %m%n" />
+		</layout>
+	</appender>
+	
+			
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+	    <layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" 
+			value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+	    </layout>
+	</appender>
+	
+	<logger name="com.test" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="log4jchat" />
+	</logger>
+	
+	<logger name="com.v2tech" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="log4jchat" />
+	</logger>
+	
+	
+	
+	
+	
+	<root>
+		<level value="ERROR" />
+		<appender-ref ref="log4jchat" />
+		<appender-ref ref="console" />
+		<!--<appender-ref ref="console" /> -->
+		
+	</root>
+</log4j:configuration>

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Employee Registration Form</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/default.css"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+		
+	<script src="js/table.js"></script>
+		
+    </head>
+    <body>    
+        <form action="" class="register" ng-app="" ng-controller="tableController">
+            <h1>Employee</h1>
+            <fieldset class="row1">
+                <legend>Employee Primary Details
+                </legend>
+                <p>
+                    <label>First Name *
+                    </label>
+                    <input type="text"/>
+                    <label>Last Name *
+                    </label>
+                    <input type="text"/>
+                </p>
+                <p>
+                    <label>Primary Email*
+                    </label>
+                    <input type="text"/>
+                    <label>Primary Phone*
+                    </label>
+                    <input type="text"/>
+                    <label class="obinfo">* obligatory fields
+                    </label>
+                </p>
+            </fieldset>
+            <fieldset class="row2">
+                <legend>Personal Details
+                </legend>
+                <p>
+                    <label>Other Mobile *
+                    </label>
+                    <input type="text" class="long"/>
+                </p>
+                <p>
+                    <label>Website *
+                    </label>
+                    <input type="text" maxlength="10"/>
+                </p>
+                <p>
+                    <label class="optional">Street
+                    </label>
+                    <input type="text" class="long"/>
+                </p>
+                <p>
+                    <label>Fax *
+                    </label>
+                    <input type="text" class="long"/>
+                </p>
+                
+            </fieldset>
+            <fieldset class="row3">
+                <legend>Further Information
+                </legend>
+                <p>
+                    <label>User ID *</label>
+                    <input type="text" value="radio"/>
+                    
+                </p>
+		<p>
+                    <label>Password *</label>
+                    <input type="password"  />
+                    
+                </p>
+                
+                
+            </fieldset>
+            
+            <div><button class="button">Register &raquo;</button></div>
+	    <table border="1">
+                <tr>
+                    <th style="width:150px"><legend><b>First Name</b></legend></th>
+                    <th style="width:150px"><legend>Last Name</legend></th>
+                    <th style="width:150px"><legend>Primary Email</legend></th>
+                        <th><legend>Action</legend></th>
+                </tr>
+                <tr ng-repeat="employee in employees">
+                    <td><label>{{ employee.empFirstName }}</label></td>
+                    <td><label>{{ employee.empLastName }}</label></td>
+                    <td><label>{{ employee.primaryEmail }}</label></td>
+                    <td>
+                        <a  href="#" ng-click="edit(employee.id)">edit</a> | 
+                        <a href="#" ng-click="delete(employee.id)">delete</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+
+
+
+
+

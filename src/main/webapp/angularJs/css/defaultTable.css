@@ -1,0 +1,13 @@
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: green;
+    border: 1px solid green;
+}
+
+ th {
+    border: 1px solid green;
+}
+
+.tbl_container{ overflow:auto; width: 800px;height: 300px; }

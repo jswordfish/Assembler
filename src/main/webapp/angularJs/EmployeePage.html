@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>Employee Registration Form</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="css/default.css"/>
+	<link rel="stylesheet" type="text/css" href="css/defaultTable.css"/>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+		
+	<script src="js/table.js"></script>
+		
+    </head>
+    <body ng-app="" ng-controller="tableController">    
+    
+        <form action="" class="register" >
+		
+            <h1>Employee</h1>
+            <fieldset class="row1">
+                <legend>Employee Primary Details
+                </legend>
+                <p>
+                    <label>First Name *
+                    </label>
+                    <input type="text" ng-model="newEmployee.empFirstName"/>
+                    <label>Last Name *
+                    </label>
+                    <input type="text"  ng-model="newEmployee.empLastName" />
+                </p>
+                <p>
+                    <label>Primary Email*
+                    </label>
+                    <input type="text"  ng-model="newEmployee.primaryEmail" />
+                    <label>Primary Phone*
+                    </label>
+                    <input type="text"  ng-model="newEmployee.primaryPhone" />
+                    <label class="obinfo">* obligatory fields
+                    </label>
+                </p>
+            </fieldset>
+            <fieldset class="row2">
+                <legend>Personal Details
+                </legend>
+                <p>
+                    <label>Other Mobile *
+                    </label>
+                    <input type="text" class="long" ng-model="newEmployee.mobile"/>
+                </p>
+                <p>
+                    <label>Website *
+                    </label>
+                    <input type="text" maxlength="70" ng-model="newEmployee.website"/>
+                </p>
+                <p>
+                    <label class="optional">Street
+                    </label>
+                    <input type="text" class="long"/>
+                </p>
+                <p>
+                    <label>Fax *
+                    </label>
+                    <input type="text" class="long"  ng-model="newEmployee.fax"/>
+                </p>
+                
+            </fieldset>
+            <fieldset class="row3">
+                <legend>Further Information
+                </legend>
+                <p>
+                    <label>User ID *</label>
+                    <input type="text" value="radio"/>
+                    
+                </p>
+		<p>
+                    <label>Password *</label>
+                    <input type="password"  />
+                    
+                </p>
+                
+                
+            </fieldset>
+	    <button class="button" ng-click="saveRecord()">Create or Update &raquo;</button>
+	    <fieldset class="row4">
+	   
+	    <div class="tbl_container">
+                <table border="1">
+		<tr> <legend><input type="text" value="" placeholder="First Name"/></tr>
+		<tr> <input type="text" value="" placeholder="Last Name"/></tr>
+		<tr> <input type="text" value="" placeholder="Role"/></tr>
+		<tr> <input type="text" value="" placeholder="Department"/> </legend></tr>
+		<tr><a  href="#" ng-click="search(employee.id)">Search Employees</a>  </tr>
+                <tr>
+                    <th style="width:150px"><legend><b>First Name</b></legend></th>
+                    <th style="width:150px"><legend>Last Name</legend></th>
+                    <th style="width:150px"><legend>Primary Email</legend></th>
+		    <th style="width:100px"><legend>Mobile</legend></th>
+		    <th style="width:100px"><legend>Website</legend></th>
+                        <th style="width:250px"><legend>Action</legend></th>
+                </tr>
+                <tr ng-repeat="employee in employees">
+                    <td><label>{{ employee.empFirstName }}</label></td>
+                    <td><label>{{ employee.empLastName }}</label></td>
+                    <td><label>{{ employee.primaryEmail }}</label></td>
+		    <td><label>{{ employee.mobile }}</label></td>
+                    <td><label>{{ employee.website }}</label></td>
+                    <td>
+                        <a  href="#" ng-click="edit(employee.id)">edit</a> | 
+                        <a href="#" ng-click="delete(employee.id)">delete</a>
+                    </td>
+                </tr>
+            </table>
+                </div>
+                
+            </fieldset>
+            
+            
+	    
+        </form>
+	<br/>
+	
+	
+	
+    </body>
+</html>
+
+
+
+
+
